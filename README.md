@@ -77,7 +77,7 @@ Place .conf files inside:
 
 Each file defines one device.
 
-## Example RouterOS config (`rb5009.conf`)
+## A. Example RouterOS config (`rb5009.conf`)
 
     DEVICE_NAME="rb5009"
     DEVICE_TYPE="routeros"
@@ -89,7 +89,7 @@ Each file defines one device.
     RETENTION_WEEKLY=6
     RETENTION_MONTHLY=12
 
-## Example SwOS config (`crs354.conf`)
+## B. Example SwOS config (`crs354.conf`)
 
     DEVICE_NAME="crs354"
     DEVICE_TYPE="swos"
