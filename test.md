@@ -3,7 +3,7 @@
 A lightweight, fully automated backup solution for **RouterOS** and **SwOS** devices.  
 This script runs on any Linux host (typically a Proxmox LXC or VM) and stores all backups, logs, and device configuration files on an **SMB network share**.
 
-## Features
+## 🎯 Features
 
 - Automatic backups for:
   - RouterOS (.backup and .rsc export)
@@ -21,9 +21,9 @@ This script runs on any Linux host (typically a Proxmox LXC or VM) and stores al
 
 ---
 
-# Installation (Debian / Ubuntu host)
+# 💾 Installation (Debian / Ubuntu host)
 
-These steps assume the script runs inside a Linux container or VM with access to an SMB share.
+These steps assume the script runs inside a Linux system with access to an SMB share.
 
 ## 1. Install dependencies
 
@@ -77,11 +77,11 @@ Place .conf files inside:
 
 Each file defines one device.
 
-## Example RouterOS config (`rb4011.conf`)
+## Example RouterOS config (`rb5009.conf`)
 
-    DEVICE_NAME="rb4011"
+    DEVICE_NAME="rb5009"
     DEVICE_TYPE="routeros"
-    DEVICE_IP="10.1.254.1"
+    DEVICE_IP="192.168.88.1"
     DEVICE_USER="backup"
     DEVICE_PASS="your-password"
 
@@ -93,7 +93,7 @@ Each file defines one device.
 
     DEVICE_NAME="crs354"
     DEVICE_TYPE="swos"
-    DEVICE_IP="10.1.254.2"
+    DEVICE_IP="192.168.88.2"
     DEVICE_USER="admin"
     DEVICE_PASS="swos-pass"
 
@@ -103,21 +103,6 @@ Each file defines one device.
 
 Adding a device = simply drop a .conf file.  
 No script modification required.
-
----
-
-# (Optional) Fix timezone for correct timestamps
-
-Especially important in LXC containers:
-
-    rm -f /etc/localtime
-    ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
-
-Check:
-
-    date
-
----
 
 # Testing
 
@@ -207,7 +192,7 @@ On each run:
 
 - Linux host (Proxmox LXC recommended)
 - cifs-utils, sshpass, wget, curl, bash
-- SMB-capable NAS (QNAP/Synology/Windows)
+- SMB-capable system (QNAP/Synology/Windows)
 - RouterOS devices with SSH enabled
 - SwOS devices with backup endpoint (backup.swb)
 
